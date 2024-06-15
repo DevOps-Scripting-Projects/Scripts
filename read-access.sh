@@ -10,14 +10,14 @@ REPO_NAME=$2
 
 helper()
 
-function github_api_get {
+github_api_get() {
     local endpoint = "$1"
     local url ="${API_URL}/${endpoint}"
 
     curl -s -u "${USERNAME}:${TOKEN}" "url"
 }
 
-function list_users_with_read_access {
+list_users_with_read_access() {
     local endpoint = "repos/${REPO_OWNER}/${REPO_NAME}/collaborators"
 
     local collaborators = "$(github_api_get "endpoint" | jq -r '.[]|select(.permissions.pull==true)|.login')"
@@ -30,7 +30,7 @@ function list_users_with_read_access {
     fi
 }
 
-function helper {
+helper() {
 expected_cmd_args=2
 if [$# -ne expected_cmd_args]; then
 	echo "Execute the script with required command line arguments"
