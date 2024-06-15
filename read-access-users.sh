@@ -26,7 +26,7 @@ github_api_get() {
 list_users_with_read_access() {
     local endpoint="repos/${REPO_OWNER}/${REPO_NAME}/collaborators"
 
-    local collaborators="$(github_api_get "$endpoint" | jq -r '.[] | select(.permissions.pull == true) | .login')"
+    local collaborators="$(github_api_get "$endpoint")"
 
     if [[ -z "$collaborators" ]]; then
         echo "No users with read access to ${REPO_OWNER}/${REPO_NAME}"
