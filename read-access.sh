@@ -8,13 +8,13 @@ TOKEN=$token
 REPO_OWNER=$1
 REPO_NAME=$2
 
-helper()
+helper
 
 github_api_get() {
     local endpoint = "$1"
     local url ="${API_URL}/${endpoint}"
 
-    curl -s -u "${USERNAME}:${TOKEN}" "url"
+    curl -s -u "${USERNAME}:${TOKEN}" "${url}"
 }
 
 list_users_with_read_access() {
@@ -32,7 +32,7 @@ list_users_with_read_access() {
 
 helper() {
 expected_cmd_args=2
-if [$# -ne expected_cmd_args]; then
+if [[$# -ne expected_cmd_args]]; then
 	echo "Execute the script with required command line arguments"
 fi
 }
