@@ -1,6 +1,6 @@
 #!/bin/bash
 
-API_URL = "https://api.github.com" # this is the base url
+API_URL="https://api.github.com" # this is the base url
 
 USERNAME=$username
 TOKEN=$token
